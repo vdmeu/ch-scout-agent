@@ -1,0 +1,49 @@
+{
+  "kind": "Listing",
+  "data": {
+    "children": [
+      {
+        "kind": "t3",
+        "data": {
+          "id": "abc123x",
+          "title": "Companies House API quota exceeded — any alternatives?",
+          "selftext": "I'm running a script that fetches director appointments from Companies House. Every morning I blow through the API quota and get throttled for the rest of the day. Is there a cached mirror or a paid tier I'm missing?",
+          "url": "https://www.reddit.com/r/learnpython/comments/abc123x/companies_house_api_quota/",
+          "permalink": "/r/learnpython/comments/abc123x/companies_house_api_quota/",
+          "subreddit": "learnpython",
+          "created_utc": 1709290000.0,
+          "score": 12,
+          "num_comments": 8
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "id": "abc124y",
+          "title": "How to get all directors for a list of UK companies?",
+          "selftext": "Using the Companies House API, I want to build a director network graph. I have 500 company numbers and need to find all current officers. What's the most efficient approach?",
+          "url": "https://www.reddit.com/r/Python/comments/abc124y/directors_companies_house/",
+          "permalink": "/r/Python/comments/abc124y/directors_companies_house/",
+          "subreddit": "Python",
+          "created_utc": 1709293600.0,
+          "score": 7,
+          "num_comments": 4
+        }
+      },
+      {
+        "kind": "t3",
+        "data": {
+          "id": "abc125z",
+          "title": "Best Python web framework in 2024?",
+          "selftext": "Trying to decide between FastAPI and Django. What are your thoughts?",
+          "url": "https://www.reddit.com/r/Python/comments/abc125z/python_web_framework/",
+          "permalink": "/r/Python/comments/abc125z/python_web_framework/",
+          "subreddit": "Python",
+          "created_utc": 1709297200.0,
+          "score": 55,
+          "num_comments": 42
+        }
+      }
+    ]
+  }
+}

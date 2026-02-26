@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "question_id": 77001234,
+      "title": "Companies House API returning 429 too many requests — how to handle rate limits?",
+      "link": "https://stackoverflow.com/questions/77001234/companies-house-api-returning-429",
+      "body": "<p>I'm hitting the Companies House API from a Python script to bulk-fetch company profiles. After about 200 requests I start getting 429 rate limit errors. What's the correct back-off strategy?</p>",
+      "tags": ["python", "companies-house", "api", "rate-limiting"],
+      "creation_date": 1709000000,
+      "score": 8,
+      "answer_count": 2
+    },
+    {
+      "question_id": 77001235,
+      "title": "Parsing iXBRL financial statements from Companies House filed accounts",
+      "link": "https://stackoverflow.com/questions/77001235/parsing-ixbrl-financial-statements",
+      "body": "<p>I'm trying to extract revenue and profit figures from iXBRL documents returned by the Companies House document API. The inline XBRL context references are confusing me. Any libraries or approaches that work?</p>",
+      "tags": ["python", "xbrl", "companies-house", "financial-data"],
+      "creation_date": 1709001000,
+      "score": 5,
+      "answer_count": 1
+    },
+    {
+      "question_id": 77001236,
+      "title": "How do I reverse a list in Python?",
+      "link": "https://stackoverflow.com/questions/77001236/reverse-list-python",
+      "body": "<p>What's the most Pythonic way to reverse a list?</p>",
+      "tags": ["python", "list"],
+      "creation_date": 1709002000,
+      "score": 42,
+      "answer_count": 10
+    }
+  ],
+  "has_more": false,
+  "quota_max": 300,
+  "quota_remaining": 290
+}

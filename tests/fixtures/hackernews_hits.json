@@ -1,0 +1,47 @@
+{
+  "hits": [
+    {
+      "objectID": "39500001",
+      "title": "Ask HN: Anyone built on top of Companies House API? Rate limiting is brutal",
+      "url": null,
+      "story_text": "We're building a due-diligence tool using Companies House data. The 600-req/5-min cap is killing us for batch jobs. Has anyone found a workaround short of spinning up proxies?",
+      "comment_text": null,
+      "created_at": "2024-03-01T10:00:00.000Z",
+      "created_at_i": 1709290000,
+      "author": "devfounder42",
+      "points": 38,
+      "num_comments": 14,
+      "_tags": ["story", "ask_hn"]
+    },
+    {
+      "objectID": "39500002",
+      "title": "Extracting structured financials from Companies House iXBRL filings",
+      "url": "https://example.com/blog/ixbrl-companies-house",
+      "story_text": null,
+      "comment_text": null,
+      "created_at": "2024-03-01T11:00:00.000Z",
+      "created_at_i": 1709293600,
+      "author": "dataengineer",
+      "points": 22,
+      "num_comments": 5,
+      "_tags": ["story"]
+    },
+    {
+      "objectID": "39500003",
+      "title": "Show HN: My new SaaS landing page",
+      "url": "https://example-saas.com",
+      "story_text": "I built a SaaS product. Check it out.",
+      "comment_text": null,
+      "created_at": "2024-03-01T12:00:00.000Z",
+      "created_at_i": 1709297200,
+      "author": "founder99",
+      "points": 5,
+      "num_comments": 2,
+      "_tags": ["story", "show_hn"]
+    }
+  ],
+  "nbHits": 3,
+  "page": 0,
+  "nbPages": 1,
+  "hitsPerPage": 20
+}

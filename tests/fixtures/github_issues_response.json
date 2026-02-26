@@ -1,0 +1,44 @@
+{
+  "total_count": 3,
+  "incomplete_results": false,
+  "items": [
+    {
+      "id": 2100001,
+      "number": 42,
+      "title": "Rate limiting when fetching from Companies House API in bulk",
+      "body": "We're getting 429 responses when looping over a large list of company numbers. The Companies House API throttles at 600 req/5 min. Would be great to have built-in backoff.",
+      "html_url": "https://github.com/example-org/due-diligence/issues/42",
+      "state": "open",
+      "created_at": "2024-03-01T10:00:00Z",
+      "labels": [
+        {"id": 1, "name": "bug"},
+        {"id": 2, "name": "companies-house"}
+      ]
+    },
+    {
+      "id": 2100002,
+      "number": 17,
+      "title": "Parse iXBRL annual accounts from Companies House filing API",
+      "body": "Need to extract balance sheet data and profit and loss figures from the iXBRL documents. The taxonomy references make this non-trivial.",
+      "html_url": "https://github.com/example-org/fintech-tools/issues/17",
+      "state": "open",
+      "created_at": "2024-03-01T11:00:00Z",
+      "labels": [
+        {"id": 3, "name": "enhancement"},
+        {"id": 4, "name": "xbrl"}
+      ]
+    },
+    {
+      "id": 2100003,
+      "number": 88,
+      "title": "Fix typo in README",
+      "body": "There's a typo on line 42.",
+      "html_url": "https://github.com/example-org/random-repo/issues/88",
+      "state": "open",
+      "created_at": "2024-03-01T12:00:00Z",
+      "labels": [
+        {"id": 5, "name": "documentation"}
+      ]
+    }
+  ]
+}
