@@ -77,11 +77,14 @@ async def _send_telegram(scored: ScoredPost) -> bool:
     draft = get_draft_reply(scored.matched_pain_points)
     pain_points_str = ", ".join(scored.matched_pain_points) if scored.matched_pain_points else "general"
 
-    text = (
-        f"<b>{_escape_html(pain_points_str)}</b> | {post.source.capitalize()} | score {scored.score:.2f}\n"
-        f'<a href="{post.url}">{_escape_html(_truncate(post.title, 200))}</a>\n\n'
-        f"<i>Draft reply:</i>\n{_escape_html(_truncate(draft, 600))}"
-    )
+    parts = [
+        f"<b>{_escape_html(pain_points_str)}</b> | {post.source.capitalize()} | score {scored.score:.2f}",
+        f'<a href="{post.url}">{_escape_html(_truncate(post.title, 200))}</a>',
+    ]
+    if post.body and post.body.strip():
+        parts.append(f"\n<i>{_escape_html(_truncate(post.body, 400))}</i>")
+    parts.append(f"\n💬 <code>{_escape_html(_truncate(draft, 280))}</code>")
+    text = "\n".join(parts)
 
     payload = {
         "chat_id": settings.telegram_chat_id,
