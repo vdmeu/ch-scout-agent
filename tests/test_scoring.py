@@ -5,6 +5,7 @@ Score formula:
   ch_context = 0.4 if any CH keyword in text+tags else 0.0
   per pain point: min(0.5, count_of_distinct_keyword_matches * 0.2)
   total = min(1.0, ch_context + sum(pain_point_scores))
+  dev_context: if no programming/API language found, total *= 0.5
 """
 
 from datetime import datetime
@@ -163,3 +164,51 @@ def test_empty_post_scores_zero():
     result = score(post)
     assert result.score == 0.0
     assert result.matched_pain_points == []
+
+
+# ---------------------------------------------------------------------------
+# Developer context filter (false positive prevention)
+# ---------------------------------------------------------------------------
+
+
+def test_legal_advice_post_filtered():
+    """
+    A non-developer Companies House post (e.g. legal advice) should score
+    below threshold even if it mentions directors and Companies House.
+    Reproduces the r/LegalAdviceUK false positive.
+    """
+    post = _post(
+        title="Someone fraudulently using our business address & company name — what next steps?",
+        body=(
+            "A company is using our registered address without permission. "
+            "I checked Companies House and a director is listed at our address. "
+            "We have received court judgment letters. Should we report to Companies House?"
+        ),
+        tags=["LegalAdviceUK"],
+    )
+    result = score(post)
+    assert result.score < 0.5, f"Legal advice post should be filtered, got score {result.score}"
+
+
+def test_developer_post_with_directors_not_filtered():
+    """A genuine developer question about directors should still score high."""
+    post = _post(
+        title="How to fetch all company directors via Companies House API in Python",
+        body="I'm using the Companies House API to get officer appointments for a list of companies.",
+    )
+    result = score(post)
+    assert result.score >= 0.5
+    assert "director_network" in result.matched_pain_points
+
+
+def test_no_dev_context_halves_score():
+    """Posts without any programming/API language should have their score halved."""
+    with_dev = _post(
+        "Companies House directors lookup",
+        body="Using the api to fetch all directors.",
+    )
+    without_dev = _post(
+        "Companies House directors lookup",
+        body="I want to find all the directors of this company.",
+    )
+    assert score(with_dev).score > score(without_dev).score
