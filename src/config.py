@@ -12,6 +12,10 @@ class Settings(BaseSettings):
     # Discord
     scout_webhook_url: str = Field(default="")
 
+    # Telegram
+    telegram_bot_token: str = Field(default="")
+    telegram_chat_id: str = Field(default="")
+
     # Supabase
     supabase_url: str = Field(default="")
     supabase_key: str = Field(default="")
