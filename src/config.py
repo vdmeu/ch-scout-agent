@@ -28,10 +28,10 @@ class Settings(BaseSettings):
     min_relevance_score: float = Field(default=0.5)
 
     # Poll intervals (minutes)
-    poll_interval_stackoverflow: int = Field(default=15)
-    poll_interval_hackernews: int = Field(default=30)
-    poll_interval_reddit: int = Field(default=30)
-    poll_interval_github: int = Field(default=15)
+    poll_interval_stackoverflow: int = Field(default=360)
+    poll_interval_hackernews: int = Field(default=360)
+    poll_interval_reddit: int = Field(default=360)
+    poll_interval_github: int = Field(default=360)
 
     # Lookback window (seconds)
     lookback_seconds: int = Field(default=86400)
