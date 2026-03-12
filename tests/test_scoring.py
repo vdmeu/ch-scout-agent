@@ -60,6 +60,17 @@ def test_director_network_post_scores_high():
     assert "director_network" in result.matched_pain_points
 
 
+def test_psc_beneficial_ownership_post_scores_high():
+    """CH context + PSC/UBO keywords should score >= 0.6."""
+    post = _post(
+        "How to get beneficial ownership data from Companies House API",
+        body="I need to extract persons with significant control for KYB checks.",
+    )
+    result = score(post)
+    assert result.score >= 0.6
+    assert "psc_beneficial_ownership" in result.matched_pain_points
+
+
 # ---------------------------------------------------------------------------
 # Low-relevance / filtered posts
 # ---------------------------------------------------------------------------
@@ -135,6 +146,7 @@ def test_pain_points_list_accurate():
     assert "rate_limit" in result.matched_pain_points
     assert "ixbrl_parsing" not in result.matched_pain_points
     assert "director_network" not in result.matched_pain_points
+    assert "psc_beneficial_ownership" not in result.matched_pain_points
 
 
 def test_tags_contribute_to_scoring():

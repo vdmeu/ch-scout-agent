@@ -27,6 +27,15 @@ _TEMPLATES: dict[str, str] = {
         "API is here: {api_base_url}. "
         "No auth needed to try it out."
     ),
+    "psc_beneficial_ownership": (
+        "Getting clean beneficial ownership data from Companies House is surprisingly hard — "
+        "the raw PSC endpoint returns coded control strings and mixes active/ceased entries together. "
+        "I built an endpoint that decodes everything to plain English (e.g. 'Owns 25-50% of shares'), "
+        "splits active from ceased PSCs, extracts company numbers from corporate entities for chain "
+        "traversal, and detects exemptions for listed PLCs. "
+        "Check it out: {api_base_url}. "
+        "Happy to discuss edge cases."
+    ),
 }
 
 _DEFAULT_TEMPLATE = (

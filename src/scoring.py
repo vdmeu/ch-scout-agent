@@ -49,6 +49,21 @@ _PAIN_POINT_KEYWORDS: dict[str, list[str]] = {
         "officer",
         "appointments",
     ],
+    "psc_beneficial_ownership": [
+        "psc",
+        "persons with significant control",
+        "person with significant control",
+        "beneficial owner",
+        "beneficial ownership",
+        "ubo",
+        "ultimate beneficial owner",
+        "ownership chain",
+        "ownership structure",
+        "corporate ownership",
+        "significant control",
+        "kyb",
+        "know your business",
+    ],
 }
 
 # Developer/technical context keywords.

@@ -17,6 +17,11 @@ def test_director_network_template_returned():
     assert "director" in reply.lower() or "network" in reply.lower()
 
 
+def test_psc_beneficial_ownership_template_returned():
+    reply = get_draft_reply(["psc_beneficial_ownership"])
+    assert "psc" in reply.lower() or "beneficial" in reply.lower() or "ownership" in reply.lower()
+
+
 def test_first_pain_point_wins():
     """When multiple pain points match, the first one in the list is used."""
     reply_rate = get_draft_reply(["rate_limit", "ixbrl_parsing"])
@@ -36,6 +41,6 @@ def test_empty_pain_points_returns_default():
 
 def test_all_templates_contain_api_url():
     """Every template should include a link to the API."""
-    for points in [["rate_limit"], ["ixbrl_parsing"], ["director_network"], []]:
+    for points in [["rate_limit"], ["ixbrl_parsing"], ["director_network"], ["psc_beneficial_ownership"], []]:
         reply = get_draft_reply(points)
         assert "ch-api-production" in reply or "http" in reply
